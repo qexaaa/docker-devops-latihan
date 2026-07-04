@@ -2,4 +2,4 @@
 
 CI/CD Pipeline Practice
 
-Update CI Pipeline - 4 Juli 2026
+## Trigger CI - 4 Juli 2026
