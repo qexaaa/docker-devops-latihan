@@ -1,0 +1,39 @@
+services:
+
+  app:
+    build: .
+    image: myapp:v1
+    container_name: myapp
+
+    ports:
+      - "3000:3000"
+
+    depends_on:
+      - db
+
+    environment:
+      DB_HOST: db
+      DB_PORT: 5432
+      DB_USER: appuser
+      DB_PASSWORD: password123
+      DB_NAME: myapp
+
+  db:
+    image: postgres:15-alpine
+    container_name: postgres-db
+
+    restart: unless-stopped
+
+    environment:
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: myapp
+
+    ports:
+      - "5432:5432"
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
