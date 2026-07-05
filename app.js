@@ -50,7 +50,7 @@ app.get("/", async (req, res) => {
     const result = await client.query("SELECT * FROM students ORDER BY id");
 
     let html = `
-    <h1>Hello DevOps!</h1>
+    <h1>Hello Continuous Deployment!</h1>
     <h2>Database PostgreSQL Berhasil Terhubung</h2>
 
     <h3>Daftar Data</h3>

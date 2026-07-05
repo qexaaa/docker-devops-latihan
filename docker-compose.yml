@@ -2,7 +2,7 @@ services:
 
   app:
     build: .
-    image: myapp:v1
+    image: qexa/latihan-b:latest
     container_name: myapp
 
     ports:
